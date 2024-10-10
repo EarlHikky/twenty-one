@@ -255,27 +255,6 @@ int get_matrix(int **matrix, unsigned int rows, unsigned int cols) {
     return 1;
 }
 
-// Функция для вывода матрицы
-void print_matrix(int **matrix, unsigned int rows, unsigned int cols) {
-    for (unsigned int i = 0; i < rows; i++) {
-        for (unsigned int j = 0; j < cols; j++) {
-            if (j > 0) printf(" ");
-            printf("%d", matrix[i][j]);
-        }
-        if (i != rows - 1) {
-            printf("\n");  // Перенос строки после каждой строки, кроме последней
-        }
-    }
-}
-
-// Функция для освобождения памяти матрицы
-void free_matrix(int **matrix, unsigned int rows) {
-    for (unsigned int i = 0; i < rows; i++) {
-        free(matrix[i]);
-    }
-    free(matrix);
-}
-
 // Функция для поиска максимальных элементов в каждой строке
 void find_max_in_rows(int **matrix, unsigned int rows, unsigned int cols, int *max_in_rows) {
     for (unsigned int i = 0; i < rows; i++) {
@@ -302,3 +281,23 @@ void find_min_in_cols(int **matrix, unsigned int rows, unsigned int cols, int *m
     }
 }
 
+// Функция для вывода матрицы
+void print_matrix(int **matrix, unsigned int rows, unsigned int cols) {
+    for (unsigned int i = 0; i < rows; i++) {
+        for (unsigned int j = 0; j < cols; j++) {
+            if (j > 0) printf(" ");
+            printf("%d", matrix[i][j]);
+        }
+        if (i != rows - 1) {
+            printf("\n");  // Перенос строки после каждой строки, кроме последней
+        }
+    }
+}
+
+// Функция для освобождения памяти матрицы
+void free_matrix(int **matrix, unsigned int rows) {
+    for (unsigned int i = 0; i < rows; i++) {
+        free(matrix[i]);
+    }
+    free(matrix);
+}
